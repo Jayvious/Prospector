@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6751467202997253610}
   - component: {fileID: 330486068971887460}
   - component: {fileID: 7316773780654143746}
+  - component: {fileID: 114866893458219060}
   m_Layer: 5
   m_Name: PrefabFloatingScore
   m_TagString: Untagged
@@ -77,3 +78,24 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
+--- !u!114 &114866893458219060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097645535099262612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a55bb5e1528e5249ad5e0132faa4928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  _score: 0
+  scoreString: 
+  bezierPts: []
+  fontSizes: []
+  timeStart: -1
+  timeDuration: 1
+  easingCurve: ',InOut|'
+  reportFinishTo: {fileID: 0}
