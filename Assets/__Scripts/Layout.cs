@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public class Layout : MonoBehaviour
 
     public PT_XMLReader xmlr;
     public PT_XMLHashtable xml;
-    public Vector2 mutiplier;
+    public Vector2 multiplier;
 
     public List<SlotDef> slotDefs;
     public SlotDef drawPile;
@@ -34,15 +35,17 @@ public class Layout : MonoBehaviour
     {
         xmlr = new PT_XMLReader();
         xmlr.Parse(xmlText);
+        xml = xmlr.xml["xml"][0];
 
-        mutiplier.x = float.Parse(xml["multiplier"][0].att("x"));
-        mutiplier.y = float.Parse(xml["multiplier"][0].att("y"));
+        multiplier.x = float.Parse(xml["multiplier"][0].att("x"));
+        multiplier.y = float.Parse(xml["multiplier"][0].att("y"));
 
         SlotDef tSD;
 
         PT_XMLHashList slotsX = xml["slot"];
 
-        for(int i = 0; i<slotsX.Count; i++) {
+        for (int i = 0; i < slotsX.Count; i++)
+        {
             tSD = new SlotDef();
             if (slotsX[i].HasAtt("type"))
             {
@@ -67,7 +70,7 @@ public class Layout : MonoBehaviour
                     if (slotsX[i].HasAtt("hiddenby"))
                     {
                         string[] hiding = slotsX[i].att("hiddenby").Split(',');
-                        foreach(string s in hiding)
+                        foreach (string s in hiding)
                         {
                             tSD.hiddenBy.Add(int.Parse(s));
                         }
@@ -84,19 +87,19 @@ public class Layout : MonoBehaviour
             }
         }
 
-        
+
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
