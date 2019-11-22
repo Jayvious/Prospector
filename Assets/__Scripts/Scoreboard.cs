@@ -24,7 +24,7 @@ public class Scoreboard : MonoBehaviour
         set
         {
             _score = value;
-            _scoreString = _score.ToString("NO");
+            scoreString = _score.ToString("N0");
         }
     }
 
@@ -55,7 +55,7 @@ public class Scoreboard : MonoBehaviour
 
     public void FSCallback(FloatingScore fs)
     {
-        score = fs.score;
+        score += fs.score;
     }
 
     public FloatingScore CreateFloatingScore(int amt, List<Vector2> pts)
